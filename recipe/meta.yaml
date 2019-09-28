@@ -1,4 +1,4 @@
-{% set version = '4-6' %}
+{% set version = '4-9' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,17 +7,16 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: rjags_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/rjags_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rjags/rjags_{{ version }}.tar.gz
-  sha256: cf24bb1e7c8445bafb49097089ad33e5bd5d8efbccf16fc7e32ad230f05f89ad
+  sha256: 2aa4c5c310e1e64a82b4ce2cf5de789d409a71c1ca973b5d9d55a8685def35ef
   patches:
     - fix-module-path.diff
 
 build:
   merge_build_host: True  # [win]
-  number: 1003
+  number: 0
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
@@ -26,10 +25,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}sed               # [win]
     - {{posix}}grep              # [win]
@@ -66,3 +65,21 @@ extra:
   recipe-maintainers:
     - conda-forge/r
     - micknudsen
+
+# Package: rjags
+# Version: 4-9
+# Date: 2019-08-07
+# Title: Bayesian Graphical Models using MCMC
+# Authors@R: c(person("Martyn", "Plummer", role=c("aut","cre"), email="martyn.plummer@gmail.com"), person("Alexey", "Stukalov", role="ctb"), person("Matt", "Denwood", role="ctb"))
+# Depends: R (>= 2.14.0), coda (>= 0.13)
+# SystemRequirements: JAGS 4.x.y
+# URL: http://mcmc-jags.sourceforge.net
+# Suggests: tcltk
+# Description: Interface to the JAGS MCMC library.
+# License: GPL (== 2)
+# NeedsCompilation: yes
+# Packaged: 2019-08-19 11:05:25 UTC; martyn
+# Author: Martyn Plummer [aut, cre], Alexey Stukalov [ctb], Matt Denwood [ctb]
+# Maintainer: Martyn Plummer <martyn.plummer@gmail.com>
+# Repository: CRAN
+# Date/Publication: 2019-08-19 13:10:05 UTC
