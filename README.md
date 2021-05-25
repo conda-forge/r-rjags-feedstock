@@ -3,7 +3,7 @@ About r-rjags
 
 Home: http://mcmc-jags.sourceforge.net
 
-Package license: GPL (== 2)
+Package license: GPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rjags-feedstock/blob/master/LICENSE.txt)
 
