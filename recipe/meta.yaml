@@ -56,7 +56,7 @@ test:
 
 about:
   home: http://mcmc-jags.sourceforge.net
-  license: GPL (== 2)
+  license: GPL-2.0-only
   summary: Interface to the JAGS MCMC library.
   license_family: GPL2
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
