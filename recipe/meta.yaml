@@ -1,4 +1,4 @@
-{% set version = "4-10" %}
+{% set version = "4-11" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,13 +10,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rjags_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rjags/rjags_{{ version }}.tar.gz
-  sha256: bd3e0bdf50b23b63061a0caa2428be585ccbf0b3f5d28eaa690e714e508d0ada
+  sha256: 051c852ba65d17a576ad07d54c5b045d1d1c250219f9cf14f2464012a534486f
   patches:
     - fix-module-path.diff
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
@@ -59,7 +59,7 @@ about:
   license: GPL-2.0-only
   summary: Interface to the JAGS MCMC library.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
