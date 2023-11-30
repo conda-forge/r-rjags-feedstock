@@ -1,4 +1,4 @@
-{% set version = "4-14" %}
+{% set version = "4-15" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,13 +10,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rjags_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rjags/rjags_{{ version }}.tar.gz
-  sha256: 313b5df702598ce3bbc5f8b027b654c8489420ca5a4e0a794954ea9f4837e2cb
+  sha256: 35cd4c1faaaa8523b87ac053b881dccf29798f073f438459589e786b95ef18a1
   patches:
     - fix-module-path.diff
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
