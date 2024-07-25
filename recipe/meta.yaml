@@ -11,8 +11,6 @@ source:
     - {{ cran_mirror }}/src/contrib/rjags_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rjags/rjags_{{ version }}.tar.gz
   sha256: 35cd4c1faaaa8523b87ac053b881dccf29798f073f438459589e786b95ef18a1
-  patches:
-    - fix-module-path.diff
 
 build:
   merge_build_host: true  # [win]
