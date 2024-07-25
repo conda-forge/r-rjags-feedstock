@@ -1,2 +1,2 @@
-PKG_CPPFLAGS=-I$PREFIX/include/JAGS 
-PKG_LIBS=-L$PREFIX/lib -ljags -Wl,-rpath $PREFIX/lib
+PKG_CPPFLAGS=-I${PREFIX}/include/JAGS 
+PKG_LIBS=-L${PREFIX}/lib -ljags -Wl,-rpath ${PREFIX}/lib
