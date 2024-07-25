@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $target_platform ~= osx-* ]]; then
+if [[ $target_platform =~ osx-* ]]; then
   sed -ie 's/.Platform\$dynlib.ext/".so"/g' R/jags.R
 fi
 
