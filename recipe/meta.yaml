@@ -1,6 +1,5 @@
 {% set version = "4-16" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-rjags
@@ -13,8 +12,7 @@ source:
   sha256: 369d393e519ae26219ff44e6a8f07d9310a9bb06fa0ec9dcce33ce7c4bc7e7e7
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
@@ -47,7 +45,6 @@ requirements:
     - jags 4.*
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-coda >=0.13
     - jags 4.*
 
