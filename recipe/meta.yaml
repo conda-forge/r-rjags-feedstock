@@ -1,4 +1,4 @@
-{% set version = "4-17" %}
+{% set version = "4-18" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rjags_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rjags/rjags_{{ version }}.tar.gz
-  sha256: e911e7ca7e1acd8b25b8b02f59aa4bf4a1b406569907b0295a3082fadaff4334
+  sha256: 0809cfc23a3b539d8719de345812bb82f288e18617530b7012ec0c151477fdae
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
