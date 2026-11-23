@@ -5,7 +5,7 @@
 
     ## Set the module directory
     if (is.null(getOption("jags.moddir"))) {
-        jags_moddir <- file.path(R.home(), "..", "JAGS", "modules-4")
+        jags_moddir <- file.path(R.home(), "..", "JAGS", "modules-5")
         options("jags.moddir" = jags_moddir)
     }
     load.module("basemod", quiet=TRUE)
