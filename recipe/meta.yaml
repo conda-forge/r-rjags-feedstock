@@ -17,7 +17,7 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
-    - lib/JAGS/modules-4/
+    - lib/JAGS/modules-5/
 
 requirements:
   build:
@@ -42,11 +42,11 @@ requirements:
   host:
     - r-base
     - r-coda >=0.13
-    - jags 4.*
+    - jags >=5.0.0,<6
   run:
     - r-base
     - r-coda >=0.13
-    - jags 4.*
+    - jags >=5.0.0,<6
 
 test:
   commands:
